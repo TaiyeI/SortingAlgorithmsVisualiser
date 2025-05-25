@@ -7,7 +7,6 @@ const App = () => {
   const [algo, setAlgo] = useState(0);
   const [dataArray, setDataArray] = useState([50, 20, 11, 70]);
   const [checkingIndexes, setCheckingIndexes] = useState([]);
-  const [sortedColour, setSortedColour] = useState([]);
 
   const createArray = () => {
     let temparray = [];
@@ -35,7 +34,7 @@ const App = () => {
           let swapvalue = tempdata[i];
           tempdata[i] = tempdata[i + 1];
           tempdata[i + 1] = swapvalue;
-          console.log(tempdata);
+          // console.log(tempdata);
           setDataArray(Array.from(tempdata));
           await waitTime(50);
         }
