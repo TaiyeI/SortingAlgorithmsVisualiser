@@ -8,15 +8,6 @@ const App = () => {
   const [dataArray, setDataArray] = useState([50, 20, 11, 70]);
   const [checkingIndexes, setCheckingIndexes] = useState([]);
 
-  const createArray = () => {
-    let temparray = [];
-    for (let i = 0; i < items; i++) {
-      let divHeight = 1 + Math.floor(Math.random() * 99);
-      temparray.push(divHeight);
-    }
-    setDataArray(temparray);
-  };
-
   const waitTime = (delay = 300) => {
     return new Promise((res) => setTimeout(res, delay));
   };
@@ -67,7 +58,12 @@ const App = () => {
   };
 
   useEffect(() => {
-    createArray();
+    let temparray = [];
+    for (let i = 0; i < items; i++) {
+      let divHeight = 1 + Math.floor(Math.random() * 99);
+      temparray.push(divHeight);
+    }
+    setDataArray(temparray);
   }, [items]);
 
   return (
